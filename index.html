@@ -1,0 +1,108 @@
+<!--
+Created by Andrew Ding
+eOriginal
+October 2016
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>eOriginal API Workflow Training</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <script language='javascript' src='js/jquery/jquery-3.1.1.min.js' type='text/javascript'></script>
+    <script language='javascript' src='js/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+    <script language='javascript' src='js/script.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id="navwrapper">
+    	<h2>eOriginal API Workflows</h2>
+    	<ul class="nav">
+    		<li class="embed">
+    			<img class="icon" src="icons/display.png" alt="">
+    			<span>Embedded Session</span>
+    		</li>
+    		<li class="email">
+    			<img class="icon" src="icons/mail.png" alt="">
+    			<span>Email Session</span>
+    		</li>
+    		<li class="transfer">
+    			<img class="icon" src="icons/paperplane.png" alt="">
+    			<span>Transfer</span>
+    		</li>
+    		<li class="destruction">
+    			<img class="icon" src="icons/trash.png" alt="">
+    			<span>Destruction</span>
+    		</li>
+    		<li class="retrieve">
+    			<img class="icon" src="icons/note.png" alt="">
+    			<span>Retrieve Copy</span>
+    		</li>
+    	</ul>
+    </div>
+
+    <!-- EMBED -->
+    <div id="embeddom" style="display:none">
+
+      <div class="wrap">
+        <div class="box">
+          <span class="step">1</span>
+          <div id="login"><h3>eoLogin</h3><br></br></div>
+        </div>
+        <div class="box">
+          <span class="step">2</span>
+          <div id="login"><h3>eoLogin</h3><br></br></div>
+        </div>
+        <div class="box">
+          <span class="step">3</span>
+          <div id="login"><h3>eoLogin</h3><br></br></div>
+        </div>
+        <div class="box">
+          <span class="step">4</span>
+          <div id="login"><h3>eoLogin</h3><br></br></div>
+        </div>
+        <div class="box">
+          <span class="step">5</span>
+          <div id="login"><h3>eoLogin</h3><br></br></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMAIL -->
+    <div id="emaildom" style="display:none">
+      <h2>Email Session</h2>
+      <button class="accordion">eoLogin</button>
+      <div class="panel">
+        <div id="eologin"></div>
+      </div>
+
+      <button class="accordion">Section 2</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <button class="accordion">Section 3</button>
+      <div id="foo" class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+
+    <!-- TRANSFER -->
+    <div id="transferdom" style="display:none">
+      <p>This is the transfer page</p>
+    </div>
+
+    <!-- DESTRUCTION -->
+    <div id="destructiondom" style="display:none">
+      <p>This is the destruction page</p>
+    </div>
+
+    <!-- RETRIEVE -->
+    <div id="retrievedom" style="display:none">
+      <p>This is the retrieve page</p>
+    </div>
+  </body>
+</html>
