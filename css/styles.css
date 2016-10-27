@@ -250,6 +250,10 @@ h4 {
   transition: all 0.3 ease;
   cursor: pointer;
 }
+.form select{
+	font-family: 'Muli', serif;
+	margin-bottom: 15px;
+}
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
 }
