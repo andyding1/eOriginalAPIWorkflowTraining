@@ -52,22 +52,30 @@ October 2016
 
     <!-- EMAIL -->
     <div id="emaildom" style="display:none">
-      <h2>Email Session</h2>
+      <h3>Email Session</h3>
       <button class="accordion">eoLogin</button>
       <div class="panel">
-        <div class="panelcontent">
-          <h4>Description</h4>
-          <p>A successful eoLogin returns a cookie and is required prior to using the application.</p>
-          <div class="form">
-            <h4>Parameters</h4>
-            <form>
-              <input type="text" placeholder="loginUsername*"/>
-              <input type="text" placeholder="loginOrganization*"/>
-              <input type="password" placeholder="loginPassword*"/>
-              <button>login</button>
-            </form>
+        <div class="eologin">
+          <div class="panelcontent">
+            <h4>Description</h4>
+            <p>A successful eoLogin returns a cookie and is required prior to using the application.</p>
+            <div class="apicontainer">
+              <div class="form">
+                <h4>Parameters</h4>
+                <form>
+                  <input type="text" placeholder="loginUsername*"/>
+                  <input type="text" placeholder="loginOrganization*"/>
+                  <input type="password" placeholder="loginPassword*"/>
+                  <button>submit</button>
+                </form>
+              </div>
+              <div class="response">
+                <h4>Response</h4>
+                <iframe></iframe>
+              </div>
+            </div>
           </div>
-        </div>
+      </div>
     </div>
 
       <button class="accordion">Section 2</button>

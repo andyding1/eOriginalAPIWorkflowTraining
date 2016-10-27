@@ -18,6 +18,12 @@ h2{
 	text-align:center;
 	font-weight: bolder;
 }
+h3{
+	color: darkmagenta;
+	padding:15px 0 25px 0;
+	text-align:center;
+	font-weight: bolder;
+}
 #navwrapper{
 	width: 728px;
 	margin: 10px auto;
@@ -156,18 +162,19 @@ div.panel {
 
 div.panel.show {
   opacity: 1;
-  max-height: 500px;
+  max-height: 10000px;
 }
 
 /*Panel Content CSS*/
 .panelcontent {
-  width: 360px;
+  width: 80vw;
   margin: auto;
+	padding: 1.5em;
 }
-.panelcontent h4 {
+h4 {
 	text-align: center;
 	color: black;
-	margin: .5em;
+	margin-bottom: 1em;
 }
 .panelcontent p{
 	text-align: center;
@@ -177,7 +184,6 @@ div.panel.show {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
   margin: 1em 1em;
   padding: 2em;
   text-align: center;
@@ -211,12 +217,27 @@ div.panel.show {
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
 }
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
+.apicontainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
 }
-.form .message a {
-  color: #4CAF50;
-  text-decoration: none;
+.form {
+	flex-basis: 30%;
+}
+.response {
+	flex-basis: 70%;
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  margin: 1em 1em;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.response iframe {
+	margin:auto;
+	width: 90%;
+	height: 85%;
 }
