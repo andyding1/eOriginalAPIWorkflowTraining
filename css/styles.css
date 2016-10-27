@@ -14,16 +14,52 @@ ul li{
 	list-style:none;
 }
 h2{
+	font-size: 1.5em;
 	padding:15px 0 25px 0;
 	text-align:center;
 	font-weight: bolder;
 }
 h3{
+	font-size: 1.25em;
 	color: darkmagenta;
 	padding:15px 0 25px 0;
 	text-align:center;
 	font-weight: bolder;
 }
+
+/*Environment Selector*/
+
+#envdiv{
+	font-size: 1em;
+	font-family: 'Muli', sans-serif;
+}
+.changeEnv {
+    font-size:.625em;
+    text-decoration: none;
+		color: blue;
+		border: 1px solid black;
+		border-radius: 5px;
+		padding: 1px;
+		text-transform: uppercase;
+		background-color: white;
+		font-weight: bolder;
+}
+.changeEnv:hover {
+	background-color: #e6e6e6;
+}
+.env {
+    width: 245px;
+    border: solid 1px;
+    padding: 5px;
+    margin-bottom: 5px;
+	text-align:left;
+	position:absolute;
+	left:5px;
+	background:#fff;
+	font-family: 'Muli', sans-serif;
+}
+
+/*Nav Menu*/
 #navwrapper{
 	width: 728px;
 	margin: 10px auto;
@@ -126,18 +162,16 @@ button.accordion {
   border: none;
   text-align: center;
   outline: none;
-  font-size: 15px;
+  font-size: 1.15em;
   transition: 0.4s;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: bolder;
 }
-
 button.accordion.active {
 	background-color: #00d2ff; /* fallback for old browsers */
 	background-color: -webkit-linear-gradient(to left, #00d2ff , #928DAB); /* Chrome 10-25, Safari 5.1-6 */
 	background-color: linear-gradient(to left, #00d2ff , #928DAB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 button.accordion:hover {
 	background-color: #b0d4e3;
 	background-color: -moz-linear-gradient(top, #b0d4e3 0%, #88bacf 100%);
@@ -148,7 +182,6 @@ button.accordion:hover {
 	background-color: linear-gradient(top, #b0d4e3 0%,#88bacf 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0d4e3', endColorstr='#88bacf',GradientType=0 );
 }
-
 div.panel {
   padding: 0 18px;
 	background-color: #E0EAFC; /* fallback for old browsers */
@@ -159,7 +192,6 @@ div.panel {
   transition: 0.6s ease-in-out;
   opacity: 0;
 }
-
 div.panel.show {
   opacity: 1;
   max-height: 10000px;
@@ -167,18 +199,22 @@ div.panel.show {
 
 /*Panel Content CSS*/
 .panelcontent {
-  width: 80vw;
-  margin: auto;
-	padding: 1.5em;
+  width: 100%;
+  margin-top: 1em;
+	/*padding: 1.5em;*/
+	font-family: 'Muli', sans-serif;
 }
 h4 {
 	text-align: center;
 	color: black;
-	margin-bottom: 1em;
+	/*margin-bottom: 1em;*/
 }
 .panelcontent p{
+	font-family: 'Quicksand', sans-serif;
 	text-align: center;
+	font-size: .875em;
 	font-style: italic;
+	margin-top: 1em;
 }
 .form {
   position: relative;
@@ -190,7 +226,7 @@ h4 {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Muli', sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -198,7 +234,7 @@ h4 {
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: .875em;
 }
 .form button {
 	font-weight: bolder;
@@ -209,13 +245,16 @@ h4 {
   border: 0;
   padding: 15px;
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: .875em;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
+}
+.form h4, .responsebox h4{
+	margin-bottom: 1em;
 }
 .apicontainer {
 	display: flex;
@@ -226,7 +265,7 @@ h4 {
 .form {
 	flex-basis: 30%;
 }
-.response {
+.responsebox {
 	flex-basis: 70%;
   position: relative;
   z-index: 1;
@@ -236,8 +275,9 @@ h4 {
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.response iframe {
+.response {
 	margin:auto;
-	width: 90%;
+	width: 95%;
 	height: 85%;
+	border: 3px solid #BBB;
 }

@@ -11,13 +11,28 @@ October 2016
     <title>eOriginal API Workflow Training</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <script language='javascript' src='js/jquery/jquery-3.1.1.min.js' type='text/javascript'></script>
-    <script language='javascript' src='js/bootstrap/bootstrap.min.js' type='text/javascript'></script>
     <script language='javascript' src='js/script.js' type='text/javascript'></script>
+    <script language='javascript' src='js/nav.js' type='text/javascript'></script>
   </head>
   <body>
+    <!-- Environment Selector -->
+    <div id="envdiv">
+			<strong>Environment:</strong>&nbsp;<span id="envname" style="color:steelblue;"><a href="#" style="text-decoration:none;color:black;cursor:text;color:red" title="https://previewondemand.eoriginal.com/eod">previewondemand</a></span> <span id="hostname" style="display:none">https://previewondemand.eoriginal.com/ecore/</span>
+			<a href="#" id="changeEnv" class="changeEnv" onclick="toggleShowEnv()">Change Environment</a>
+		</div>
+    <div id="env" style="display:none;" class="env">
+  		<input type="checkbox" name="hostname" id="previewondemand" checked="checked" value="https://previewondemand.eoriginal.com/ecore/" onclick="toggleHostname(this)" />previewondemand<br />
+  		<input type="checkbox" name="hostname" id="testondemand" value="https://testondemand.eoriginal.com/ecore/" onclick="toggleHostname(this)" />testondemand<br />
+  		<input type="checkbox" name="hostname" id="ondemand" value="https://ondemand.eoriginal.com/ecore/" onclick="toggleHostname(this)" />ondemand<br />
+
+  		<div style="font-size:10px;padding-left:60px;">
+  			(http://HOSTNAME:PORT/ecore/)
+  		</div>Dev Env: <input type="text" size="30" name="hostname" id="Dev Environment" style="font-size:12px;" onblur="toggleHostname(this)" />
+		</div>
+
     <!-- Tab Menu -->
     <div id="navwrapper">
     	<h2>eOriginal API Workflows</h2>
@@ -55,38 +70,60 @@ October 2016
       <h3>Email Session</h3>
       <button class="accordion">eoLogin</button>
       <div class="panel">
-        <div class="eologin">
+        <div class="eoLogin">
           <div class="panelcontent">
             <h4>Description</h4>
             <p>A successful eoLogin returns a cookie and is required prior to using the application.</p>
             <div class="apicontainer">
               <div class="form">
                 <h4>Parameters</h4>
-                <form>
-                  <input type="text" placeholder="loginUsername*"/>
-                  <input type="text" placeholder="loginOrganization*"/>
-                  <input type="password" placeholder="loginPassword*"/>
-                  <button>submit</button>
+                <form action="" target="responseFrame" method="post" name="submitForm" id="submitForm">
+                  <input name="loginUsername" type="text" placeholder="loginUsername*"/>
+                  <input name="loginOrganization" type="text" placeholder="loginOrganization*"/>
+                  <input name="loginPassword" type="password" placeholder="loginPassword*"/>
+                  <input name="ipAddress" type="text" placeholder="ipAddress"/>
+                  <button type="submit" form="submitForm" onclick="disableEmptyForm();redirectAction(document.submitForm,'?action=eoLogin', parent.document.getElementById('hostname').innerHTML)">submit</button>
                 </form>
               </div>
-              <div class="response">
+              <div class="responsebox">
                 <h4>Response</h4>
-                <iframe></iframe>
+                <iframe name="responseFrame" class="response"></iframe>
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </div>
 
-      <button class="accordion">Section 2</button>
+      <button class="accordion">eoCreateTransactionUploadDocument</button>
       <div class="panel">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
 
-      <button class="accordion">Section 3</button>
-      <div id="foo" class="panel">
+      <button class="accordion">eoInsertFormFields</button>
+      <div class="panel">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
+
+      <button class="accordion">eoConfigureSortOrder</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <button class="accordion">eoConfigureRoles</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <button class="accordion">eoConfigureInvitation</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <button class="accordion">eoLogout</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
     </div>
 
     <!-- TRANSFER -->
