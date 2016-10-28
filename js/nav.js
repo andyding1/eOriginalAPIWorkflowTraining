@@ -44,12 +44,17 @@ function toggleShowEnv()
 	}
 }
 
-function disableEmptyForm(){ 
-  quizSearchForm = jQuery("#submitForm"); 
-  //disable empty fields so they don't clutter up the url 
-  quizSearchForm.find(':input[value=""]').attr('disabled', true); 
-} 
-function addField(){ 
+function disableEmptyForm(){
+  quizSearchForm = jQuery("#submitForm");
+  //disable empty fields so they don't clutter up the url
+  quizSearchForm.find(':input[value=""]').attr('disabled', true);
+}
+function disableEmptyForm1(){
+  quizSearchForm = jQuery("#submitForm1");
+  //disable empty fields so they don't clutter up the url
+  quizSearchForm.find(':input[value=""]').attr('disabled', true);
+}
+function addField(){
 $( "#empty" ).after( '<tr><td><img src="../../images/checkmark.gif" alt="required" /></td><td>removeTransactionSid</td><td><input type="text" size="25" name="removeTransactionSid" value="" /></td><td>If you would like to remove a transaction sid you may enter it here.</td></tr>' );
-  
-} 
+
+}

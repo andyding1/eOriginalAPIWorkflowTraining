@@ -32,6 +32,7 @@ h3{
 #envdiv{
 	font-size: 1em;
 	font-family: 'Muli', sans-serif;
+	position: fixed;
 }
 .changeEnv {
     font-size:.625em;
@@ -52,11 +53,18 @@ h3{
     border: solid 1px;
     padding: 5px;
     margin-bottom: 5px;
+		margin-top: 1.4em;
 	text-align:left;
-	position:absolute;
+	position:fixed;
 	left:5px;
 	background:#fff;
 	font-family: 'Muli', sans-serif;
+}
+
+/*Link Menu*/
+#linkmenu{
+	float:right;
+	margin: 1em;
 }
 
 /*Nav Menu*/
