@@ -127,11 +127,11 @@ October 2016
             <div class="apicontainer">
               <div class="form">
                 <h4>Parameters</h4>
-                <form action="" target="responseFrame1" method="post" name="submitForm1" id="submitForm1">
+                <form action="" target="responseFrame1" method="post" enctype="multipart/form-data" name="submitForm1" id="submitForm1">
                   <input name="transactionName" type="text" placeholder="transactionName"/>
                   <input name="dptName" type="text" placeholder="dptName"/>
                   <input name="documentFileName" type="text" placeholder="documentFileName"/>
-                  <input name="srcFile" type="file" value=""/>
+                  <input name="srcFile" type="file"/>
                   <select name="mimeType">
                     <optgroup label="Documents">
                       <option value="application/pdf" selected="selected">
@@ -210,7 +210,7 @@ October 2016
                       </option>
                     </optgroup>
                   </select>
-                  <button type="submit" form="submitForm1" onclick="disableEmptyForm();redirectAction(document.submitForm1,'?action=eoCreateTransactionUploadDocument', parent.document.getElementById('hostname').innerHTML)">submit</button>
+                  <button type="submit" form="submitForm1" onclick="disableEmptyForm1();redirectAction(document.submitForm1,'?action=eoCreateTransactionUploadDocument', parent.document.getElementById('hostname').innerHTML)">submit</button>
                 </form>
               </div>
               <div class="responsebox">
