@@ -385,3 +385,8 @@ h4 {
 	height: 85%;
 	border: 3px solid #BBB;
 }
+
+/*Workspace Box*/
+#workspacebox{
+	position:fixed;
+}

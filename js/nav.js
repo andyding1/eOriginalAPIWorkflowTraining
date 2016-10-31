@@ -13,6 +13,22 @@ function redirectAction(theForm, theAction, theHost)
    }
 }
 
+// sets correct workspace link based on environment selected
+function getWorkspace(theHost){
+  if(theHost != undefined && theHost != '')
+  {
+     var workspaceurl = theHost.replace('ecore/','ssweb/workspace/showLogin.eo');
+     $('#workspacelink').attr('href', workspaceurl);
+    //  $("#workspaceframe").attr("src", workspaceurl);
+    //  $("#workspacebox").css ('display','block');
+  }
+  else
+  {
+     alert('There was an issue bringing up workspace. Please verify you have the correct environment selected');
+     return false;
+  }
+}
+
 // toggles the hostname
 function toggleHostname(ele)
 {
