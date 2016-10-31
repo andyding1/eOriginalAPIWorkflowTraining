@@ -70,6 +70,31 @@ function disableEmptyForm1(){
   //disable empty fields so they don't clutter up the url
   quizSearchForm.find(':input[value=""]').attr('disabled', true);
 }
+function disableEmptyForm2(){
+  quizSearchForm = jQuery("#submitForm2");
+  //disable empty fields so they don't clutter up the url
+  quizSearchForm.find(':input[value=""]').attr('disabled', true);
+}
+function disableEmptyForm3(){
+  quizSearchForm = jQuery("#submitForm3");
+  //disable empty fields so they don't clutter up the url
+  quizSearchForm.find(':input[value=""]').attr('disabled', true);
+}
+function disableEmptyForm4(){
+  quizSearchForm = jQuery("#submitForm3");
+  //disable empty fields so they don't clutter up the url
+  quizSearchForm.find(':input[value=""]').attr('disabled', true);
+}
+function disableEmptyForm5(){
+  quizSearchForm = jQuery("#submitForm5");
+  //disable empty fields so they don't clutter up the url
+  quizSearchForm.find(':input[value=""]').attr('disabled', true);
+}
+function disableEmptyForm6(){
+  quizSearchForm = jQuery("#submitForm5");
+  //disable empty fields so they don't clutter up the url
+  quizSearchForm.find(':input[value=""]').attr('disabled', true);
+}
 function addField(){
 $( "#empty" ).after( '<tr><td><img src="../../images/checkmark.gif" alt="required" /></td><td>removeTransactionSid</td><td><input type="text" size="25" name="removeTransactionSid" value="" /></td><td>If you would like to remove a transaction sid you may enter it here.</td></tr>' );
 

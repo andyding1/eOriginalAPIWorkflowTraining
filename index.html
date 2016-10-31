@@ -22,8 +22,8 @@ October 2016
     <!-- Workspace Modal -->
     <div id="workspacebox" style="display: none;" class="modal">
       <div class="modal-content">
-        <span class="close" style="color:red">×</span>
-        <iframe id="workspaceframe" src="" width="90%" height="90%"></iframe>
+        <span class="close"><div class="close-button"></div></span>
+        <iframe id="workspaceframe" src=""></iframe>
       </div>
     </div>
 
@@ -131,6 +131,7 @@ October 2016
                   <input name="transactionName" type="text" placeholder="transactionName"/>
                   <input name="dptName" type="text" placeholder="dptName"/>
                   <input name="documentFileName" type="text" placeholder="documentFileName"/>
+                  <p>srcFile:</p>
                   <input name="srcFile" type="file"/>
                   <select name="mimeType">
                     <optgroup label="Documents">
@@ -221,32 +222,127 @@ October 2016
           </div>
         </div>
       </div>
-
+      <!-- eoInsertFormFields -->
       <button class="accordion">eoInsertFormFields</button>
       <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="eoInsertFormFields">
+          <div class="panelcontent">
+            <h4>Description</h4>
+            <p>Inserts signature blocks and supporting text fields, storing the resulting PDF file as a new document version in the document profile; returns an XML response containing the revised document version ID for the PDF file with signature and text blocks added.</p>
+            <div class="apicontainer">
+              <div class="form">
+                <h4>Parameters</h4>
+                <form action="" target="responseFrame2" method="post" enctype="multipart/form-data" name="submitForm2" id="submitForm2">
+                  <input name="dpSid" type="text" size="25" placeholder="dpSid"/>
+                  <p style="text-align: center; font-size: .85em;">One of the following:</p>
+                  <input type="text" size="25" name="formFieldsTemplateName" placeholder="formFieldsTemplateName"/>
+                  <p>formFieldsXML</p>
+                  <input type="file" name="formFieldsXML" />
+                  <button type="submit" form="submitForm2" onclick="disableEmptyForm2();redirectAction(document.submitForm2,'?action=eoInsertFormFields', parent.document.getElementById('hostname').innerHTML)">submit</button>
+                </form>
+              </div>
+              <div class="responsebox">
+                <h4>Response</h4>
+                <iframe name="responseFrame2" class="response"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
+      <!-- eoConfigureSortOrder -->
       <button class="accordion">eoConfigureSortOrder</button>
       <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="eoConfigureSortOrder">
+          <div class="panelcontent">
+            <h4>Description</h4>
+            <p>Sets up the documents to be signed by setting up the signature path. Also specifies the order that the documents are to be signed.</p>
+            <div class="apicontainer">
+              <div class="form">
+                <h4>Parameters</h4>
+                <form action="" target="responseFrame3" method="post" enctype="multipart/form-data" name="submitForm3" id="submitForm3">
+                  <p>instructionsXML</p>
+                  <input type="file" name="instructionsXML" />
+                  <button type="submit" form="submitForm3" onclick="disableEmptyForm3();redirectAction(document.submitForm3,'?action=eoConfigureSortOrder', parent.document.getElementById('hostname').innerHTML)">submit</button>
+                </form>
+              </div>
+              <div class="responsebox">
+                <h4>Response</h4>
+                <iframe name="responseFrame3" class="response"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
+      <!-- eoConfigureRoles -->
       <button class="accordion">eoConfigureRoles</button>
       <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="eoConfigureRoles">
+          <div class="panelcontent">
+            <h4>Description</h4>
+            <p>Sets up roles for signers/view-only participants with their name, e-mail and security code.</p>
+            <div class="apicontainer">
+              <div class="form">
+                <h4>Parameters</h4>
+                <form action="" target="responseFrame4" method="post" enctype="multipart/form-data" name="submitForm4" id="submitForm4">
+                  <p>instructionsXML</p>
+                  <input type="file" name="instructionsXML" />
+                  <button type="submit" form="submitForm4" onclick="disableEmptyForm4();redirectAction(document.submitForm4,'?action=eoConfigureRoles', parent.document.getElementById('hostname').innerHTML)">submit</button>
+                </form>
+              </div>
+              <div class="responsebox">
+                <h4>Response</h4>
+                <iframe name="responseFrame4" class="response"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
+      <!-- eoConfigureInvitation -->
       <button class="accordion">eoConfigureInvitation</button>
       <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="eoConfigureInvitation">
+          <div class="panelcontent">
+            <h4>Description</h4>
+            <p>Creates the E-mail notification and sends it to the specified participants.</p>
+            <div class="apicontainer">
+              <div class="form">
+                <h4>Parameters</h4>
+                <form action="" target="responseFrame5" method="post" enctype="multipart/form-data" name="submitForm5" id="submitForm5">
+                  <p>instructionsXML</p>
+                  <input type="file" name="instructionsXML" />
+                  <button type="submit" form="submitForm5" onclick="disableEmptyForm5();redirectAction(document.submitForm5,'?action=eoConfigureInvitation', parent.document.getElementById('hostname').innerHTML)">submit</button>
+                </form>
+              </div>
+              <div class="responsebox">
+                <h4>Response</h4>
+                <iframe name="responseFrame5" class="response"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
+      <!-- eoLogout -->
       <button class="accordion">eoLogout</button>
       <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="eoLogout">
+          <div class="panelcontent">
+            <h4>Description</h4>
+            <p>Closes the user session from eoLogin.</p>
+            <div class="apicontainer">
+              <div class="form">
+                <h4>Parameters</h4>
+                <form action="" target="responseFrame6" method="post" enctype="multipart/form-data" name="submitForm6" id="submitForm6">
+                  <button type="submit" form="submitForm6" onclick="disableEmptyForm6();redirectAction(document.submitForm6,'?action=eoLogout', parent.document.getElementById('hostname').innerHTML)">submit</button>
+                </form>
+              </div>
+              <div class="responsebox">
+                <h4>Response</h4>
+                <iframe name="responseFrame6" class="response"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
 
     <!-- TRANSFER -->

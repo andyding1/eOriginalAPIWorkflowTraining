@@ -78,6 +78,7 @@ h3{
 	text-decoration:none;
 	color:#b5d1e3;
 	font-size:1.2vw;
+	cursor: pointer;
 }
 .link:hover{
 	color:#d73444;
@@ -310,7 +311,7 @@ h4 {
 	color: black;
 	/*margin-bottom: 1em;*/
 }
-.panelcontent p{
+.panelcontent > p{
 	font-family: 'Quicksand', sans-serif;
 	text-align: center;
 	font-size: .875em;
@@ -360,6 +361,11 @@ h4 {
 }
 .form h4, .responsebox h4{
 	margin-bottom: 1em;
+}
+.form p{
+	text-align: left;
+	font-size: .7em;
+	font-weight: bold;
 }
 .apicontainer {
 	display: flex;
@@ -411,18 +417,78 @@ h4 {
     width: 80%;
 		height: 80%;
 }
-.close {
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.close-button {
+	float:right;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 0.75em;
+  height: 0.75em;
+  position: relative;
+  border: none;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  font: normal 3em/normal Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #1abc9c;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+	cursor: pointer;
 }
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+.close-button::before {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 0.45em;
+  height: 0.1em;
+  position: absolute;
+  content: "";
+  top: 0.33em;
+  left: 0.155em;
+  border: none;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #ffffff;
+  text-shadow: none;
+  -webkit-transform: rotateZ(45deg)   ;
+  transform: rotateZ(45deg)   ;
 }
+.close-button::after {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 0.45em;
+  height: 0.1em;
+  position: absolute;
+  content: "";
+  top: 0.33em;
+  left: 0.155em;
+  border: none;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #ffffff;
+  text-shadow: none;
+  -webkit-transform: rotateZ(-45deg)   ;
+  transform: rotateZ(-45deg)   ;
+}
+.close-button:hover{
+	background: red;
+}
+
 #workspaceframe{
 		background: white;
 		width: 100%;
+		height: 90%;
+		margin-top:.5em;
 }
