@@ -30,9 +30,10 @@ h3{
 /*Environment Selector*/
 
 #envdiv{
-	font-size: 1em;
+	font-size: .8vw;
 	font-family: 'Muli', sans-serif;
 	position: fixed;
+	margin: 1em;
 }
 .changeEnv {
     font-size:.625em;
@@ -53,7 +54,8 @@ h3{
     border: solid 1px;
     padding: 5px;
     margin-bottom: 5px;
-		margin-top: 1.4em;
+		margin-top: 2.4em;
+		margin-left: 1em;
 	text-align:left;
 	position:fixed;
 	left:5px;
@@ -65,6 +67,96 @@ h3{
 #linkmenu{
 	float:right;
 	margin: 1em;
+	display: inline-block;
+}
+.link,.link:visited,.link:hover,.link:active{
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+	position:relative;
+  transition:0.5s color ease;
+	text-decoration:none;
+	color:#b5d1e3;
+	font-size:1.2vw;
+}
+.link:hover{
+	color:#d73444;
+}
+.link.before:before,.link.after:after{
+  content: "";
+  transition:0.5s all ease;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  position:absolute;
+}
+.link.before:before{
+  top:-0.25em;
+}
+.link.after:after{
+  bottom:-0.25em;
+}
+.link.before:before,.link.after:after{
+  height:5px;
+  height:0.35rem;
+  width:0;
+  background:#d73444;
+}
+.link.before:hover:before,.link.after:hover:after{
+  width:100%;
+}
+.square{
+  box-sizing:border-box;
+  margin-left:-0.4em;
+  position:relative;
+  font-size:1.2vw;
+  overflow:hidden;
+}
+.square .link{
+  position:static;
+  font-size:100%;
+  padding:0.2em 0.4em;
+}
+.square:before,.square:after{
+  content: "";
+  box-sizing:border-box;
+  transition:0.25s all ease;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  position:absolute;
+  width:5px;
+  width:0.35rem;
+  height:0;
+  background:#d73444;
+}
+.square:before{
+  left:0;
+  bottom:-0.2em;
+}
+.square.individual:before{
+  transition-delay:0.6s;
+}
+.square:after{
+  right:0;
+  top:-0.2em;
+}
+.square.individual:after{
+  transition-delay:0.2s;
+}
+.square .link:before{
+  left:0;
+  transition:0.25s all ease;
+}
+.square .link:after{
+  right:0;
+  transition:0.25s all ease;
+}
+.square.individual .link:after{
+  transition:0.25s all ease 0.4s;
+}
+.square:hover:before,.square:hover:after{
+  height:calc(100% + 0.4em);
+}
+.square:hover .link:before,.square:hover .link:after{
+  width:100%;
 }
 
 /*Nav Menu*/
