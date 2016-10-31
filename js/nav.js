@@ -18,7 +18,7 @@ function getWorkspace(theHost){
   if(theHost != undefined && theHost != '')
   {
      var workspaceurl = theHost.replace('ecore/','ssweb/workspace/showLogin.eo');
-     $('#workspacelink').attr('href', workspaceurl);
+     $('#workspaceframe').attr('src', workspaceurl);
     //  $("#workspaceframe").attr("src", workspaceurl);
     //  $("#workspacebox").css ('display','block');
   }
