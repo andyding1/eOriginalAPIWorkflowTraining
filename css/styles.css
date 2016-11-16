@@ -9,7 +9,7 @@ body{
 	background: -webkit-linear-gradient(to left, #56ab2f , #a8e063); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #56ab2f , #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	font-family: 'Lato', sans-serif;
-	min-width: 1324px;
+	/*min-width: 1324px;*/
 }
 ul li{
 	list-style:none;
@@ -44,6 +44,7 @@ h3{
 	font-weight:bold;
 }
 .env {
+	z-index: 2;
     width: 15em;
     border: solid 1px;
     padding: 5px;
