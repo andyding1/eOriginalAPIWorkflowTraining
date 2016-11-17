@@ -1,4 +1,31 @@
+var eoLogin = ' \
+<button class="accordion">eoLogin</button> \
+  <div class="panel"> \
+    <div class="panelcontent"> \
+      <h4>Description</h4> \
+      <p>A successful eoLogin returns a cookie and is required prior to using the application.</p> \
+      <div class="apicontainer"> \
+        <div class="form"> \
+          <h4>Parameters</h4> \
+          <form action="" target="responseFrame" method="post" name="submitForm" id="submitForm"> \
+            <input name="loginUsername" type="text" placeholder="loginUsername"/> \
+            <input name="loginOrganization" type="text" placeholder="loginOrganization"/> \
+            <input name="loginPassword" type="password" placeholder="loginPassword"/> \
+            <button type="submit" form="submitForm" onclick="disableEmptyForm();redirectAction(document.submitForm,\'?action=eoLogin\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+          </form> \
+        </div> \
+        <div class="responsebox"> \
+          <h4>Response</h4> \
+          <iframe name="responseFrame" class="response"></iframe> \
+        </div> \
+      </div> \
+    </div> \
+  </div>';
+
 $( document ).ready(function() {
+
+  $( ".eoLogin" ).append(eoLogin);
+
   $( ".embed" ).click(function() {
     // hides all then shows correct dom
     $( "#embeddom" ).hide();
