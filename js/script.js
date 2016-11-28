@@ -265,11 +265,13 @@ function hideDoms(){
   });
 }
 
-function insertCallHTML(){
+function insertCallHTML(workflow){
   calls.forEach(function(apicall){
     //Insert the API call via the eoAPI object
-    	// Only put in html if there's nothing in it already, otherwise clicking same workflow link will generate multiple copies of api calls
-      $(apicall).append(eoAPI[apicall.substr(1)]);
+    	// Only put in html if there no childs in it, otherwise clicking same workflow link will generate multiple copies of api calls
+      if ( $(apicall + "." + workflow + "call").children().length == 0 ) {
+      	$(apicall + "." + workflow + "call").append(eoAPI[apicall.substr(1)]);
+      }
   });
 }
 
@@ -306,7 +308,7 @@ function accordion(){
 
 function initialize(workflow){
   hideDoms();
-  insertCallHTML();
+  insertCallHTML(workflow);
   emptyOtherHTML(workflow);
   showDom(workflow);
   accordion();
