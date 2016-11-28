@@ -1,3 +1,4 @@
+//Putting all api calls as html strings for scalability
 var eoLogin = ' \
 <button class="accordion">eoLogin</button> \
   <div class="panel"> \
@@ -22,7 +23,6 @@ var eoLogin = ' \
     </div> \
   </div> \
 ';
-
 var eoCreateTransactionUploadDocument = ' \
 <button class="accordion">eoCreateTransactionUploadDocument</button> \
   <div class="panel"> \
@@ -125,64 +125,53 @@ var eoCreateTransactionUploadDocument = ' \
   </div> \
 ';
 
-// function loadAPI(){
-//   $( ".eoLogin" ).append(eoLogin);
-//   $( ".eoCreateTransactionUploadDocument" ).append(eoCreateTransactionUploadDocument);
-// }
+function hideDoms(){
+  var doms = ['#embeddom','#emaildom','#transferdom','#destructiondom','#retrievedom'];
+  doms.forEach(function(element){
+    $(element).hide();
+  });
+}
 
+function commentHTMLID(elementid){
+  $(elementid).append("-->");
+  $(elementid).prepend("<!--");
+}
+
+function commentElement(element){
+  comment = document.createComment($(element).get(0).outerHTML);
+  $(element).replaceWith(comment);
+}
+
+//jQuery
 $( document ).ready(function() {
+  $( ".eoLogin" ).append(eoLogin);
+  $( ".eoCreateTransactionUploadDocument" ).append(eoCreateTransactionUploadDocument);
 
   $( ".embed" ).click(function() {
-    // hides all then shows correct dom
-    $( "#embeddom" ).hide();
-    $( "#emaildom" ).hide();
-    $( "#transferdom" ).hide();
-    $( "#destructiondom" ).hide();
-    $( "#retrievedom" ).hide();
-
+    hideDoms();
+    // commentHTMLID("#embeddom");
+    commentElement('#embeddom');
     $( "#embeddom" ).show( "slow" );
   });
 
   $( ".email" ).click(function() {
-    $( ".eoLogin" ).append(eoLogin);
-    $( ".eoCreateTransactionUploadDocument" ).append(eoCreateTransactionUploadDocument);
-    // hides all then shows correct dom
-    $( "#embeddom" ).hide();
-    $( "#emaildom" ).hide();
-    $( "#transferdom" ).hide();
-    $( "#destructiondom" ).hide();
-    $( "#retrievedom" ).hide();
-
+    hideDoms();
+    commentHTMLID("#emaildom");
     $( "#emaildom" ).show( "slow" );
   });
 
   $( ".transfer" ).click(function() {
-    // hides all then shows correct dom
-    $( "#embeddom" ).hide();
-    $( "#emaildom" ).hide();
-    $( "#transferdom" ).hide();
-    $( "#destructiondom" ).hide();
-    $( "#retrievedom" ).hide();
+    hideDoms();
     $( "#transferdom" ).show( "slow" );
   });
 
   $( ".destruction" ).click(function() {
-    // hides all then shows correct dom
-    $( "#embeddom" ).hide();
-    $( "#emaildom" ).hide();
-    $( "#transferdom" ).hide();
-    $( "#destructiondom" ).hide();
-    $( "#retrievedom" ).hide();
+    hideDoms();
     $( "#destructiondom" ).show( "slow" );
   });
 
   $( ".retrieve" ).click(function() {
-    // hides all then shows correct dom
-    $( "#embeddom" ).hide();
-    $( "#emaildom" ).hide();
-    $( "#transferdom" ).hide();
-    $( "#destructiondom" ).hide();
-    $( "#retrievedom" ).hide();
+    hideDoms();
     $( "#retrievedom" ).show( "slow" );
   });
 
