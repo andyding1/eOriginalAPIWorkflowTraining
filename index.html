@@ -85,42 +85,17 @@ October 2016
     <!-- EMBED -->
     <div id="embeddom" style="display:none">
       <h3>Embedded Session</h3>
-      <div class="eoLogin"></div>
-      <div class="eoCreateTransactionUploadDocument"></div>
+      <div class="eoLogin embedcall"></div>
+      <div class="eoCreateTransactionUploadDocument embedcall"></div>
+      <div class="eoInsertFormFields embedcall"></div>
     </div>
 
     <!-- EMAIL -->
     <div id="emaildom" style="display:none">
       <h3>Email Session</h3>
-      <div class="eoLogin"></div>
-      <div class="eoCreateTransactionUploadDocument"></div>
-
-      <button class="accordion">eoInsertFormFields</button>
-      <div class="panel">
-        <div class="eoInsertFormFields">
-          <div class="panelcontent">
-            <h4>Description</h4>
-            <p>Inserts signature blocks and supporting text fields, storing the resulting PDF file as a new document version in the document profile; returns an XML response containing the revised document version ID for the PDF file with signature and text blocks added.</p>
-            <div class="apicontainer">
-              <div class="form">
-                <h4>Parameters</h4>
-                <form action="" target="responseFrame2" method="post" enctype="multipart/form-data" name="submitForm2" id="submitForm2">
-                  <input name="dpSid" type="text" size="25" placeholder="dpSid"/>
-                  <p style="text-align: center; font-size: .85em;">One of the following:</p>
-                  <input type="text" size="25" name="formFieldsTemplateName" placeholder="formFieldsTemplateName"/>
-                  <p>formFieldsXML</p>
-                  <input type="file" name="formFieldsXML" />
-                  <button type="submit" form="submitForm2" onclick="disableEmptyForm2();redirectAction(document.submitForm2,'?action=eoInsertFormFields', parent.document.getElementById('hostname').innerHTML)">submit</button>
-                </form>
-              </div>
-              <div class="responsebox">
-                <h4>Response</h4>
-                <iframe name="responseFrame2" class="response"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="eoLogin emailcall"></div>
+      <div class="eoCreateTransactionUploadDocument emailcall"></div>
+      <div class="eoInsertFormFields emailcall"></div>
 
       <button class="accordion">eoConfigureSortOrder</button>
       <div class="panel">
