@@ -316,7 +316,6 @@ function initialize(workflow){
 
 //jQuery
 $( document ).ready(function() {
-
   $( ".embed" ).click(function() {
     initialize('embed');
   });
@@ -326,43 +325,32 @@ $( document ).ready(function() {
   });
 
   $( ".transfer" ).click(function() {
-    hideDoms();
-    $( "#transferdom" ).show( "slow" );
-    accordion();
+    initialize('transfer');
   });
 
   $( ".destruction" ).click(function() {
-    hideDoms();
-    $( "#destructiondom" ).show( "slow" );
-    accordion();
+    initialize('destruction');
   });
 
   $( ".retrieve" ).click(function() {
-    hideDoms();
-    $( "#retrievedom" ).show( "slow" );
-    accordion();
+    initialize('retrieve');
   });
 
   // Embedded Workspace
   // Get the modal
   var modal = document.getElementById('workspacebox');
-
   // Get link that opens modal
   var workspacelink = document.getElementById("workspacelink");
-
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
-
   // When the user clicks the button, open the modal
   workspacelink.onclick = function() {
       modal.style.display = "block";
   }
-
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
       modal.style.display = "none";
   }
-
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
       if (event.target == modal) {
