@@ -19,12 +19,24 @@ function getWorkspace(theHost){
   {
      var workspaceurl = theHost.replace('ecore/','ssweb/workspace/showLogin.eo');
      $('#workspaceframe').attr('src', workspaceurl);
-    //  $("#workspaceframe").attr("src", workspaceurl);
-    //  $("#workspacebox").css ('display','block');
   }
   else
   {
      alert('There was an issue bringing up workspace. Please verify you have the correct environment selected');
+     return false;
+  }
+}
+
+// sets correct eosecuritychecklink
+function getEmbeddedSession(theHost){
+  if(theHost != undefined && theHost != '')
+  {
+     var eosecuritychecklink = theHost.replace('ecore/','ssweb/workspace/showLogin.eo');
+     $('#eosecuritycheckframe').attr('src', eosecuritychecklink);
+  }
+  else
+  {
+     alert('There was an issue bringing up eoSecurityCheck. Please verify you have the correct environment selected');
      return false;
   }
 }
@@ -42,22 +54,26 @@ function toggleHostname(ele)
    document.getElementById('envname').title = ele.value;
    if(ele.type == 'checkbox' && ele.checked == false)
       document.getElementById('hostname').innerHTML = '';
-
-  //set up correct link to embedded workspace
-   workspace_name=(ele.value).split('/ecore/')[0];
-   $('#workspace').attr('href',workspace_name+'/ssweb/workspace/showLogin.eo');
 }
 
 // toggles the hostname
 function toggleShowEnv()
 {
-   el = document.getElementById('env');
-   if ( el.style.display == 'block' ) {
-		el.style.display = 'none';
-	}
-	else {
-		el.style.display = 'block';
-	}
+  // el = document.getElementById('env');
+  // if ( el.style.display == 'block' ) {
+	// 	el.style.display = 'none';
+	// }
+	// else {
+	// 	el.style.display = 'block';
+	// }
+  $('#envdiv').click(function(){
+    if ( $('#env').css('display') == 'none' ){
+      $('#env').show();
+    }
+    else {
+      $('#env').hide();
+    }
+  })
 }
 
 function disableEmptyForm(){
@@ -81,7 +97,7 @@ function disableEmptyForm3(){
   quizSearchForm.find(':input[value=""]').attr('disabled', true);
 }
 function disableEmptyForm4(){
-  quizSearchForm = jQuery("#submitForm3");
+  quizSearchForm = jQuery("#submitForm4");
   //disable empty fields so they don't clutter up the url
   quizSearchForm.find(':input[value=""]').attr('disabled', true);
 }
@@ -91,7 +107,12 @@ function disableEmptyForm5(){
   quizSearchForm.find(':input[value=""]').attr('disabled', true);
 }
 function disableEmptyForm6(){
-  quizSearchForm = jQuery("#submitForm5");
+  quizSearchForm = jQuery("#submitForm6");
+  //disable empty fields so they don't clutter up the url
+  quizSearchForm.find(':input[value=""]').attr('disabled', true);
+}
+function disableEmptyForm7(){
+  quizSearchForm = jQuery("#submitForm7");
   //disable empty fields so they don't clutter up the url
   quizSearchForm.find(':input[value=""]').attr('disabled', true);
 }

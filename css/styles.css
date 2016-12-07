@@ -480,7 +480,7 @@ h4 {
 	background: red;
 }
 
-#workspaceframe{
+#workspaceframe, #eosecuritycheckframe{
 		background: white;
 		width: 100%;
 		height: 90%;

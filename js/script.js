@@ -247,13 +247,56 @@ var eoAPI = {
       </div> \
     </div> \
   </div> \
+  ',
+  //eoGetAuthCode
+  eoGetAuthCode: ' \
+  <button class="accordion">eoGetAuthCode</button> \
+  <div class="panel"> \
+    <div class="panelcontent"> \
+      <h4>Description</h4> \
+      <p>Generates an authentication code for the SmartSign signing room.</p> \
+      <div class="apicontainer"> \
+        <div class="form"> \
+          <h4>Parameters</h4> \
+          <form action="" target="responseFrame7" method="post" enctype="multipart/form-data" name="submitForm7" id="submitForm7"> \
+            <p>instructionsXML</p> \
+            <input type="file" name="instructionsXML" /> \
+            <button type="submit" form="submitForm7" onclick="disableEmptyForm7();redirectAction(document.submitForm7,\'?action=eoGetAuthCode\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+          </form> \
+        </div> \
+        <div class="responsebox"> \
+          <h4>Response</h4> \
+          <iframe name="responseFrame7" class="response"></iframe> \
+        </div> \
+      </div> \
+    </div> \
+  </div> \
+  ',
+  //eoSecurityCheck
+  eoSecurityCheck: ' \
+  <button class="accordion">eoSecurityCheck.eo</button> \
+  <div class="panel"> \
+    <div class="panelcontent"> \
+      <h4>Description</h4> \
+      <p>Use this to enter the signing room with an Authentication Code. The url is: <br /> https://*ecore environment*/ssweb/eo_security_check?authCode=*authCode value*</p> \
+      <div class="apicontainer"> \
+        <div class="form"> \
+          <h4>Parameters</h4> \
+          <form action="" method="post" enctype="multipart/form-data" name="submitFormSecurityCheck" id="submitFormSecurityCheck"> \
+            <input id="authCode" name="authCode" type="text" placeholder="authCode"/> \
+            <button id="securitycheckbutton" type="submit" form="submitFormSecurityCheck" onclick="getEmbeddedSession(parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+          </form> \
+        </div> \
+      </div> \
+    </div> \
+  </div> \
   '
 }
 
 //Declare all workflow short name elements in an array to be used for html manipulation
 var workflows = ['embed','email','transfer','destruction','retrieve'];
 //Declare all API calls to insert HTML into
-var calls = ['.eoLogin', '.eoCreateTransactionUploadDocument', '.eoInsertFormFields', '.eoConfigureSortOrder', '.eoConfigureRoles', '.eoConfigureInvitation', '.eoLogout'];
+var calls = ['.eoLogin', '.eoCreateTransactionUploadDocument', '.eoInsertFormFields', '.eoConfigureSortOrder', '.eoConfigureRoles', '.eoConfigureInvitation', '.eoLogout', '.eoGetAuthCode', '.eoSecurityCheck'];
 
 //Functions, make sure html classes/ids have the correct name otherwise these will not work as intended
 //
@@ -339,7 +382,7 @@ $( document ).ready(function() {
   // Embedded Workspace
   // Get the modal
   var modal = document.getElementById('workspacebox');
-  // Get link that opens modal
+  // Get links that open modal
   var workspacelink = document.getElementById("workspacelink");
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
@@ -357,5 +400,6 @@ $( document ).ready(function() {
           modal.style.display = "none";
       }
   }
+
 
 });
