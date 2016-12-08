@@ -14,7 +14,7 @@ var eoAPI = {
             <input name="loginUsername" type="text" placeholder="loginUsername"/> \
             <input name="loginOrganization" type="text" placeholder="loginOrganization"/> \
             <input name="loginPassword" type="password" placeholder="loginPassword"/> \
-            <button type="submit" form="submitForm" onclick="disableEmptyForm();redirectAction(document.submitForm,\'?action=eoLogin\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitForm" onclick="redirectAction(document.submitForm,\'?action=eoLogin\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
           </form> \
         </div> \
         <div class="responsebox"> \
@@ -116,7 +116,7 @@ var eoAPI = {
                 </option> \
               </optgroup> \
             </select> \
-            <button type="submit" form="submitForm1" onclick="disableEmptyForm1();redirectAction(document.submitForm1,\'?action=eoCreateTransactionUploadDocument\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitForm1" onclick="redirectAction(document.submitForm1,\'?action=eoCreateTransactionUploadDocument\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
           </form> \
         </div> \
         <div class="responsebox"> \
@@ -143,7 +143,7 @@ var eoAPI = {
             <input type="text" size="25" name="formFieldsTemplateName" placeholder="formFieldsTemplateName"/> \
             <p>formFieldsXML</p> \
             <input type="file" name="formFieldsXML" /> \
-            <button type="submit" form="submitForm2" onclick="disableEmptyForm2();redirectAction(document.submitForm2,\'?action=eoInsertFormFields\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitForm2" onclick="redirectAction(document.submitForm2,\'?action=eoInsertFormFields\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
           </form> \
         </div> \
         <div class="responsebox"> \
@@ -167,7 +167,7 @@ var eoAPI = {
           <form action="" target="responseFrame3" method="post" enctype="multipart/form-data" name="submitForm3" id="submitForm3"> \
             <p>instructionsXML</p> \
             <input type="file" name="instructionsXML" /> \
-            <button type="submit" form="submitForm3" onclick="disableEmptyForm3();redirectAction(document.submitForm3,\'?action=eoConfigureSortOrder\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitForm3" onclick="redirectAction(document.submitForm3,\'?action=eoConfigureSortOrder\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
           </form> \
         </div> \
         <div class="responsebox"> \
@@ -191,7 +191,7 @@ var eoAPI = {
           <form action="" target="responseFrame4" method="post" enctype="multipart/form-data" name="submitForm4" id="submitForm4"> \
             <p>instructionsXML</p> \
             <input type="file" name="instructionsXML" /> \
-            <button type="submit" form="submitForm4" onclick="disableEmptyForm4();redirectAction(document.submitForm4,\'?action=eoConfigureRoles\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitForm4" onclick="redirectAction(document.submitForm4,\'?action=eoConfigureRoles\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
           </form> \
         </div> \
         <div class="responsebox"> \
@@ -215,7 +215,7 @@ var eoAPI = {
           <form action="" target="responseFrame5" method="post" enctype="multipart/form-data" name="submitForm5" id="submitForm5"> \
             <p>instructionsXML</p> \
             <input type="file" name="instructionsXML" /> \
-            <button type="submit" form="submitForm5" onclick="disableEmptyForm5();redirectAction(document.submitForm5,\'?action=eoConfigureInvitation\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitForm5" onclick="redirectAction(document.submitForm5,\'?action=eoConfigureInvitation\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
           </form> \
         </div> \
         <div class="responsebox"> \
@@ -237,7 +237,7 @@ var eoAPI = {
         <div class="form"> \
           <h4>Parameters</h4> \
           <form action="" target="responseFrame6" method="post" enctype="multipart/form-data" name="submitForm6" id="submitForm6"> \
-            <button type="submit" form="submitForm6" onclick="disableEmptyForm6();redirectAction(document.submitForm6,\'?action=eoLogout\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitForm6" onclick="redirectAction(document.submitForm6,\'?action=eoLogout\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
           </form> \
         </div> \
         <div class="responsebox"> \
@@ -261,7 +261,7 @@ var eoAPI = {
           <form action="" target="responseFrame7" method="post" enctype="multipart/form-data" name="submitForm7" id="submitForm7"> \
             <p>instructionsXML</p> \
             <input type="file" name="instructionsXML" /> \
-            <button type="submit" form="submitForm7" onclick="disableEmptyForm7();redirectAction(document.submitForm7,\'?action=eoGetAuthCode\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitForm7" onclick="redirectAction(document.submitForm7,\'?action=eoGetAuthCode\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
           </form> \
         </div> \
         <div class="responsebox"> \
@@ -274,22 +274,24 @@ var eoAPI = {
   ',
   //eoSecurityCheck
   eoSecurityCheck: ' \
+  <body onload="replaceEcoreWithSsweb();"> \
   <button class="accordion">eoSecurityCheck.eo</button> \
   <div class="panel"> \
     <div class="panelcontent"> \
       <h4>Description</h4> \
-      <p>Use this to enter the signing room with an Authentication Code. The url is: <br /> https://*ecore environment*/ssweb/eo_security_check?authCode=*authCode value*</p> \
+      <p>Use this to enter the signing room with an Authentication Code. You can embed the following url into an iframe: <br /> https://<span class="inputSpan">*ecore environment*</span>/ssweb/eo_security_check?authCode=<span class="inputSpan">*authCode*</span></p> \
       <div class="apicontainer"> \
         <div class="form"> \
           <h4>Parameters</h4> \
           <form action="" method="post" enctype="multipart/form-data" name="submitFormSecurityCheck" id="submitFormSecurityCheck"> \
             <input id="authCode" name="authCode" type="text" placeholder="authCode"/> \
-            <button id="securitycheckbutton" type="submit" form="submitFormSecurityCheck" onclick="getEmbeddedSession(parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+            <button type="submit" form="submitFormSecurityCheck" onclick="embedIt(parent.document.getElementById(\'hostname\').innerHTML);">Get Embedded Session</button> \
           </form> \
         </div> \
       </div> \
     </div> \
   </div> \
+  </body> \
   '
 }
 
@@ -400,6 +402,4 @@ $( document ).ready(function() {
           modal.style.display = "none";
       }
   }
-
-
 });

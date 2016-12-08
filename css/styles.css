@@ -486,3 +486,9 @@ h4 {
 		height: 90%;
 		margin-top:.5em;
 }
+
+/*Span for eoSecurityCheck*/
+.inputSpan {
+	color: royalblue;
+	font-weight: bolder;
+}
