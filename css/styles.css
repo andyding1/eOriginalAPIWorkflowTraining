@@ -514,3 +514,27 @@ input[type=text]:focus, input[type=password]:focus, select:focus{
 	color: royalblue;
 	font-weight: bolder;
 }
+
+@media screen and (max-width: 1340px) {
+	#linkmenu{
+		font-size: 1vw;
+	}
+}
+@media screen and (max-width: 1210px) {
+	#linkmenu{
+		font-size: .8vw;
+	}
+}
+@media screen and (max-width: 1150px) {
+	#envdiv{
+		font-size: .95em;
+	}
+}
+@media screen and (max-width: 1072px) {
+	#envdiv{
+		display: none;
+	}
+	#linkmenu{
+		display: none;
+	}
+}
