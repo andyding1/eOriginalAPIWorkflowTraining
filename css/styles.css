@@ -305,13 +305,14 @@ h4 {
 	/*margin-bottom: 1em;*/
 }
 .panelcontent p{
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Muli', sans-serif;
 	text-align: center;
 	font-size: .875em;
 	font-style: italic;
 	margin-top: 1em;
 }
 .form {
+	font-family: 'Muli', sans-serif;
   position: relative;
   z-index: 1;
   background: #FFFFFF;
@@ -331,6 +332,25 @@ h4 {
   box-sizing: border-box;
   font-size: .875em;
 }
+input, textarea, select{
+	font-family: 'Muli', serif;
+}
+input[type=text], input[type=password], select{
+	-webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  border: 1px solid #DDDDDD;
+	background-color: #faffd8;
+	color: #515151;
+}
+input[type=text]:focus, input[type=password]:focus, select:focus{
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+	background-color: #f6ffba;
+	color: black;
+}
 .form button {
 	font-weight: bolder;
   text-transform: uppercase;
@@ -348,6 +368,8 @@ h4 {
 .form select{
 	font-family: 'Muli', serif;
 	margin-bottom: 15px;
+	width: 100%;
+
 }
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
