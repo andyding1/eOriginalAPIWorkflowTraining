@@ -1,3 +1,5 @@
+var workspacesession = false;
+
 // submit the form to the host passed in
 function redirectAction(theForm, theAction, theHost)
 {
@@ -15,16 +17,19 @@ function redirectAction(theForm, theAction, theHost)
 
 // sets correct workspace link based on environment selected
 function getWorkspace(theHost){
-  if(theHost != undefined && theHost != '')
-  {
-     var workspaceurl = theHost.replace('ecore/','ssweb/workspace/showLogin.eo');
-     $('#workspaceframe').attr('src', workspaceurl);
+  if(workspacesession === false){
+    if(theHost != undefined && theHost != '')
+    {
+       var workspaceurl = theHost.replace('ecore/','ssweb/workspace/showLogin.eo');
+       $('#workspaceframe').attr('src', workspaceurl);
+    }
+    else
+    {
+       alert('There was an issue bringing up workspace. Please verify you have the correct environment selected');
+       return false;
+    }
   }
-  else
-  {
-     alert('There was an issue bringing up workspace. Please verify you have the correct environment selected');
-     return false;
-  }
+  workspacesession = true;
 }
 
 // toggles the hostname
