@@ -483,13 +483,162 @@ var eoAPI = {
       </div> \
     </div> \
   </div> \
+  ',
+  //eoCreateTransaction
+  eoCreateTransaction: ' \
+  <button class="accordion">eoCreateTransaction</button> \
+  <div class="panel"> \
+    <div class="panelcontent"> \
+      <h4>Description</h4> \
+      <p>To establish a new transaction within the organization.</p> \
+      <div class="apicontainer"> \
+        <div class="form"> \
+          <h4>Parameters</h4> \
+          <form action="" target="responseFrame15" method="post" enctype="multipart/form-data" name="submitForm15" id="submitForm15"> \
+            <input name="transactionName" type="text" placeholder="transactionName"/> \
+            <button type="submit" form="submitForm15" onclick="redirectAction(document.submitForm15,\'?action=eoCreateTransaction\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+          </form> \
+        </div> \
+        <div class="responsebox"> \
+          <h4>Response</h4> \
+          <iframe name="responseFrame15" class="response"></iframe> \
+        </div> \
+      </div> \
+    </div> \
+  </div> \
+  ',
+  //eoCreateDocumentProfile
+  eoCreateDocumentProfile: ' \
+  <button class="accordion">eoCreateDocumentProfile</button> \
+  <div class="panel"> \
+    <div class="panelcontent"> \
+      <h4>Description</h4> \
+      <p>The createDocumentProfile action establishes a document profile. A document profile represents a document and contains a list of document versions.</p> \
+      <div class="apicontainer"> \
+        <div class="form"> \
+          <h4>Parameters</h4> \
+          <form action="" target="responseFrame16" method="post" enctype="multipart/form-data" name="submitForm16" id="submitForm16"> \
+            <input name="transactionSid" type="text" placeholder="transactionSid"/> \
+            <input name="dptName" type="text" placeholder="dptName"/> \
+            <button type="submit" form="submitForm16" onclick="redirectAction(document.submitForm16,\'?action=eoCreateDocumentProfile\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+          </form> \
+        </div> \
+        <div class="responsebox"> \
+          <h4>Response</h4> \
+          <iframe name="responseFrame16" class="response"></iframe> \
+        </div> \
+      </div> \
+    </div> \
+  </div> \
+  ',
+  //eoUploadDocument
+  eoUploadDocument: ' \
+  <button class="accordion">eoUploadDocument</button> \
+  <div class="panel"> \
+    <div class="panelcontent"> \
+      <h4>Description</h4> \
+      <p>Stores a document in the eCore® service, and returns a document identifier and other document metadata.</p> \
+      <div class="apicontainer"> \
+        <div class="form"> \
+          <h4>Parameters</h4> \
+          <form action="" target="responseFrame17" method="post" enctype="multipart/form-data" name="submitForm17" id="submitForm17"> \
+            <input name="dpSid" type="text" placeholder="dpSid"/> \
+            <input name="documentFileName" type="text" placeholder="documentFileName"/> \
+            <p>srcFile:</p> \
+            <input name="srcFile" type="file"/> \
+            <p>mimeType:</p> \
+            <select name="mimeType"> \
+              <optgroup label="Documents"> \
+                <option value="application/pdf" selected="selected"> \
+                    application/pdf \
+                </option> \
+              </optgroup> \
+              <optgroup label="Text Documents"> \
+                <option value="application/msword"> \
+                    application/msword \
+                </option> \
+                <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document"> \
+                    application/vnd.openxmlformats-officedocument.wordprocessingml.document \
+                </option> \
+                <option value="text/plain"> \
+                    text/plain \
+                </option> \
+              </optgroup> \
+              <optgroup label="Spreadsheets/Data Documents"> \
+                <option value="application/vnd.ms-excel"> \
+                    application/vnd.ms-excel \
+                </option> \
+                <option value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"> \
+                    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet \
+                </option> \
+                <option value="application/application/lotus123"> \
+                    application/lotus123 \
+                </option> \
+                <option value="text/comma-separated-values"> \
+                    text/comma-separated-values \
+                </option> \
+                <option value="text/csv"> \
+                    text/csv \
+                </option> \
+                <option value="application/csv"> \
+                    application/csv \
+                </option> \
+              </optgroup> \
+              <optgroup label="Presentations"> \
+                <option value="application/vnd.ms-powerpoint"> \
+                    application/vnd.ms-powerpoint \
+                </option> \
+                <option value="application/vnd.openxmlformats-officedocument.presentationml.presentation"> \
+                    application/vnd.openxmlformats-officedocument.presentationml.presentation \
+                </option> \
+              </optgroup> \
+              <optgroup label="Images"> \
+                <option value="image/bmp"> \
+                    image/bmp \
+                </option> \
+                <option value="image/jpeg"> \
+                    image/jpeg \
+                </option> \
+                <option value="application/postscript"> \
+                    application/postscript \
+                </option> \
+                <option value="application/png"> \
+                    application/png \
+                </option> \
+                <option value="image/png"> \
+                    image/png \
+                </option> \
+                <option value="application/x-png"> \
+                    application/x-png \
+                </option> \
+                <option value="image/tiff"> \
+                    image/tiff \
+                </option> \
+                <option value="image/gif"> \
+                    image/gif \
+                </option> \
+                <option value="image/x-xbitmap"> \
+                    image/x-xbitmap \
+                </option> \
+              </optgroup> \
+            </select> \
+            <button type="submit" form="submitForm17" onclick="redirectAction(document.submitForm17,\'?action=eoUploadDocument\', parent.document.getElementById(\'hostname\').innerHTML)">submit</button> \
+          </form> \
+        </div> \
+        <div class="responsebox"> \
+          <h4>Response</h4> \
+          <iframe name="responseFrame17" class="response"></iframe> \
+        </div> \
+      </div> \
+    </div> \
+  </div> \
   '
 }
 
 //Declare all workflow short name elements in an array to be used for html manipulation
 var workflows = ['embed','email','transfer','destruction','retrieve'];
 //Declare all API calls to insert HTML into
-var calls = ['.eoLogin', '.eoCreateTransactionUploadDocument', '.eoInsertFormFields', '.eoConfigureSortOrder', '.eoConfigureRoles', '.eoConfigureInvitation', '.eoLogout', '.eoGetAuthCode', '.eoSecurityCheck', '.eoSellerInitiateTransfer', '.eoBuyerAcceptTransfer', '.eoSellerConfirmTransfer', '.eoRequestDestruction', '.eoAuthorizeDestruction', '.eoGetCopy', '.eoGetTransactionDocuments'];
+var calls = ['.eoLogin', '.eoCreateTransactionUploadDocument', '.eoInsertFormFields', '.eoConfigureSortOrder', '.eoConfigureRoles', '.eoConfigureInvitation', '.eoLogout', '.eoGetAuthCode', '.eoSecurityCheck', '.eoSellerInitiateTransfer', '.eoBuyerAcceptTransfer', '.eoSellerConfirmTransfer', '.eoRequestDestruction', '.eoAuthorizeDestruction', '.eoGetCopy', '.eoGetTransactionDocuments', '.eoCreateTransaction', '.eoCreateDocumentProfile', '.eoUploadDocument'];
 
 //Functions, make sure html classes/ids have the correct name otherwise these will not work as intended
 //
